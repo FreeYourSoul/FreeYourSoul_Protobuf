@@ -1,0 +1,2 @@
+/usr/bin/ar qc libproto.a  CMakeFiles/proto.dir/FySLoginMessage.pb.cc.o CMakeFiles/proto.dir/FySBabbleMessage.pb.cc.o CMakeFiles/proto.dir/FySGtwMessage.pb.cc.o CMakeFiles/proto.dir/FySAuthenticationResponse.pb.cc.o
+/usr/bin/ranlib libproto.a
