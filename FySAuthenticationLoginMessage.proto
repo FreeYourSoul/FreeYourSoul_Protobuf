@@ -18,6 +18,7 @@ message LoginMessage {
         Acknowledge = 4;
 
         NotifyNewPlayer = 5;
+        NotifyNewServer = 6;
     }
 
     Type typeMessage = 1;
@@ -50,6 +51,14 @@ message LogingPlayerOnGame {
 message NotifyPlayerIncoming {
 
     string ip = 1;
+    bytes token = 3;
+
+}
+
+message NotifyServerIncoming {
+
+    string ip = 1;
+    string port = 2;
     bytes token = 3;
 
 }
