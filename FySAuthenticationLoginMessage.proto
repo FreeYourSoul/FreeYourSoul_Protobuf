@@ -59,6 +59,7 @@ message NotifyServerIncoming {
 
     string ip = 1;
     string port = 2;
-    bytes token = 3;
+    string positionId = 3;
+    bytes token = 4;
 
 }
