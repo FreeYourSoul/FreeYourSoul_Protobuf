@@ -12,7 +12,6 @@ message LoginErrorResponse {
         BAD_PASSWORD = 1;
         UNKNOWN = 2;
         AUTH_SERVER_UNAVAILABLE = 3;
-
     }
 
     Type typeError = 1;
@@ -22,7 +21,9 @@ message LoginErrorResponse {
 
 message AuthenticationResponse {
 
+    // Token of the Player on the gateway and on the WorldServer
     bytes token = 1;
+    // WorldServer data
     string ip = 2;
     string port = 3;
 

@@ -23,7 +23,3 @@ message FySResponseMessage {
     bool isOK = 3;
 
 }
-
-message FySEvent {
-
-}
