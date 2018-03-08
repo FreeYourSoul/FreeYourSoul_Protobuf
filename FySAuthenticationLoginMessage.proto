@@ -33,7 +33,8 @@ message LoginMessage {
 message LoginGameServer {
 
     string magicPassword = 1;
-    bool isWorldServer = 2;
+    string portForPlayer = 2;
+    bool isWorldServer = 3;
 
 }
 
