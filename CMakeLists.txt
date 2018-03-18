@@ -5,5 +5,6 @@ PROTOBUF_GENERATE_CPP(PROTO_SRC PROTO_HEADER
         FySAuthenticationLoginMessage.proto
         FySBabbleMessage.proto
         FySMessage.proto
+        FySPlayerInteraction.proto
         FySAuthenticationResponse.proto)
 ADD_LIBRARY(proto ${PROTO_HEADER} ${PROTO_SRC})

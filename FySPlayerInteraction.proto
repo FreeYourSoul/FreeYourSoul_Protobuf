@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+package fys.pb;
+
+message PlayerInteract {
+
+    enum Type {
+        // Player possible action
+        MOVE_ON = 0;
+        MOVE_OFF = 1;
+        ACTIVATE = 2;
+        REQUEST_INFO = 3;
+    }
+
+    Type type = 1;
+    google.protobuf.Any content = 2;
+    google.protobuf.Timestamp time = 4;
+    bytes token = 3;
+
+}
+
+message PlayerMove {
+
+    enum Direction {
+        RIGHT = 0;
+        RIGHT_UP = 2;
+        RIGHT_DOWN = 3;
+
+        LEFT = 4;
+        LEFT_UP = 5;
+        LEFT_DOWN = 6;
+
+        UP = 8;
+        DOWN = 9;
+    }
+    Direction direction = 1;
+    double angle = 2;
+
+}
