@@ -23,20 +23,5 @@ message PlayerInteract {
 }
 
 message PlayerMove {
-
-    enum Direction {
-        RIGHT = 0;
-        RIGHT_UP = 2;
-        RIGHT_DOWN = 3;
-
-        LEFT = 4;
-        LEFT_UP = 5;
-        LEFT_DOWN = 6;
-
-        UP = 8;
-        DOWN = 9;
-    }
-    Direction direction = 1;
-    double angle = 2;
-
+    double angle = 1;
 }
