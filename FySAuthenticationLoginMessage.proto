@@ -24,9 +24,9 @@ message LoginMessage {
         // -----
         // Notifications
         // -----
-        Acknowledge = 5;
-        NotifyNewPlayer = 6;
-        NotifyNewServer = 7;
+        NotifyNewPlayer = 5;
+        NotifyNewServer = 6;
+        Acknowledge = 7;
     }
 
     Type typeMessage = 1;
