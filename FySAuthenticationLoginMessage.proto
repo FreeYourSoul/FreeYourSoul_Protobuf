@@ -7,18 +7,26 @@ package fys.pb;
 message LoginMessage {
 
     enum Type {
-        // Server Authentication
+
+        // -----
+        // Authentication to Gateway
+        // -----
         LoginGameServer = 0;
         LoginAuthServer = 1;
-
-        // Client Authentication
         LoginPlayerOnGateway = 2;
+
+        // -----
+        // Authentication to WorldServer
+        // -----
         LoginPlayerOnGame = 3;
+        LoginWorldServerInCluster = 4;
 
-        Acknowledge = 4;
-
-        NotifyNewPlayer = 5;
-        NotifyNewServer = 6;
+        // -----
+        // Notifications
+        // -----
+        Acknowledge = 5;
+        NotifyNewPlayer = 6;
+        NotifyNewServer = 7;
     }
 
     Type typeMessage = 1;
@@ -43,10 +51,23 @@ message LoginPlayerOnGateway {
     string password = 1;
 }
 
+message LoginAuthenticationServer {
+
+}
+
 message LogingPlayerOnGame {
 
     bytes tokenGameServer = 1;
     
+}
+
+message LoginWorldServerInCluster {
+
+    string positionId = 1;
+    bytes tokenGameServer = 2;
+    string ip = 3;
+    string port = 4;
+
 }
 
 message NotifyPlayerIncoming {
