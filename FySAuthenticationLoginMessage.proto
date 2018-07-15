@@ -35,8 +35,8 @@ message LoginMessage {
     string user = 3;
 }
 
-//
-// Message to do the initial connection to the Main Server
+// WS -> GTW
+// Message sent by the WS to the Gateway in order to register itself to the Main Server (Gateway)
 //
 message LoginGameServer {
 
@@ -46,21 +46,34 @@ message LoginGameServer {
 
 }
 
+// Player -> Gateway
+// Message entry point of a player to the Gaeway server in order to get the anser to know on which WS it has to connect
+// to, the answer will contain a token that will be used as proof of authentication
+//
 message LoginPlayerOnGateway {
 
     string password = 1;
 }
 
+// Autentication Server -> GTW
+// Message sent by the Authentication server in order to register itslef to the Gateway server
+//
 message LoginAuthenticationServer {
 
 }
 
+// Player -> WS
+// Message sent by a player in order to Login a player to a World Server
+//
 message LogingPlayerOnGame {
 
     bytes tokenGameServer = 1;
     
 }
 
+// WS -> WS
+// Message sent by a WorldServer to another WorldServer in order to login another world server in the cluster
+//
 message LoginWorldServerInCluster {
 
     string positionId = 1;
@@ -70,6 +83,9 @@ message LoginWorldServerInCluster {
 
 }
 
+// GTW -> WS
+// Notification send by Gateway Server to World Server in order to notify it that a player is going to connect to it
+//
 message NotifyPlayerIncoming {
 
     string ip = 1;
@@ -77,6 +93,10 @@ message NotifyPlayerIncoming {
 
 }
 
+// GTW -> WS
+// Notification send by Gateway Server to World Server in order to notify it that a world server is going to connect
+// to its Server Cluster
+//
 message NotifyServerIncoming {
 
     string ip = 1;
